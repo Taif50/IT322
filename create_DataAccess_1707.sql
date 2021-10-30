@@ -1,6 +1,7 @@
+--user add--
 alter session set "_oracle_script"= true; 
-
-create roles BookRole identified by user;
-
-grant connect to BookRole;
-grant SELECT ON vBookStatus to BookRole;
+create user bookrole identified by user;
+grant connect to bookrole;
+ 
+grant SELECT ON vBookStatus to bookrole;
+select * from SYS.vbookstatus;
